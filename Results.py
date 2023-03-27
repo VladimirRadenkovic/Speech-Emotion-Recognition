@@ -10,7 +10,7 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from tensorflow.python.keras.callbacks import EarlyStopping, ReduceLROnPlateau
 import itertools
 import matplotlib.pyplot as plt
-from model2 import earlystopping, learning_rate_reduction, f1_m
+from model import earlystopping, learning_rate_reduction, f1_m
 TrainData = pd.read_csv('TrainDataDownsampled.csv')
 TestData = pd.read_csv('TestDataDownsampled.csv')
 X_train = TrainData.drop(labels="labels", axis=1)
