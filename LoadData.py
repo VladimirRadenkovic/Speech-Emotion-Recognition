@@ -120,7 +120,7 @@ N=100
 main_df.to_csv('Emotions.csv', index=False)
 
 plt.figure(figsize=(12,6))
-plt.title('Emotions Counts')
+plt.title('Histogram of Samples')
 emotions=sns.countplot(x='Emotion',data=main_df,palette='Set2')
 emotions.set_xticklabels(emotions.get_xticklabels(),rotation=45)
 plt.show()
@@ -141,7 +141,7 @@ import librosa.display
 
 def wave_plot(data,sr,emotion,color):
     plt.figure(figsize=(12,5))
-    plt.title(f'{emotion} emotion for waveplot',size=17)
+    plt.title('Waveplot for audio with {} emotion'.format(emotion), size=17)
     librosa.display.waveshow(y=data,sr=sr,color=color)
     plt.show()
 
@@ -149,7 +149,7 @@ def spectogram(data,sr,emotion):
     audio=librosa.stft(data)
     audio_db=librosa.amplitude_to_db(abs(audio))
     plt.figure(figsize=(12,5))
-    plt.title(f'{emotion} emotion for spectogram',size=17)
+    plt.title('Spectrogram for audio with {} emotion'.format(emotion), size=17)
     librosa.display.specshow(audio_db,sr=sr,x_axis='time',y_axis='hz')
     plt.show()
 
