@@ -1,7 +1,8 @@
 # Speech-Emotion-Recognition using Convolutional Neural Networks
+This repository contains the implementation of a Convolutional Neural Network (CNN) for Speech Emotion Recognition (SER) using various datasets. SER aims to identify human emotions from speech signals, which can have applications in fields such as Human-Computer Interaction, Voice Assistant Systems, and Mental Health Assessment.
 ## Table of contents
 * [Project Description](#project-description)
-* [Feature Extraction](#feature-extraction)
+* [Feature Extraction and Data Augmentation](#feature-extraction)
 * [Data Augmentation](#data-augmentation)
 * [Model Architecture](#model-architecture)
 * [Hyperparameter Tuning](#hyperparameter-tuning)
@@ -16,7 +17,7 @@ Datasets used in this project are:
 * Surrey Audio-Visual Expressed Emotion (Savee)
 * Toronto emotional speech set (Tess)
 
-For this project I used following libraries: librosa, keras, sklearn, matplotlib, seaborn, numpy, pandas, pickle, itertools
+##Feature Extraction and Data Augmentation
 
 
 ## Model Architecture
