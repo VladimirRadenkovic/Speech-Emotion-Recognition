@@ -9,6 +9,7 @@ This repository contains the implementation of a Convolutional Neural Network (C
 * [Hyperparameter Tuning](#hyperparameter-tuning)
 * [Results](#results)
 * [Dependencies](#dependencies)
+* [Usage](#usage)
 
 ## Project Description
 The aim of this project is to build Convolutional Neural Network for speech emotion classification.
@@ -29,7 +30,10 @@ Savee is a dataset comprising 480 British English audio-visual samples from four
 * **Toronto emotional speech set (Tess)**:
 Tess consists of 200 audio files per emotion, with a total of 2800 audio files. The dataset features emotional speech recordings by two actresses who express seven different emotions.
 
+
 By combining these datasets, the aim is to create a robust and diverse collection of emotional speech samples that can be effectively used for training and evaluating our emotion recognition model. This ensures a higher degree of accuracy and generalization across various accents, genders, and age groups.
+
+The emotions to be classified from the audio files are: disgust, happy, sad, neutral, fear, angry, and surprise.
 
 ## Feature Extraction
 The following features are extracted from the audio data:
@@ -89,3 +93,13 @@ The following Python packages are used in this project:
 11. warnings
 12. random
 13. pickle
+
+## Usage
+To use this project, follow the steps below:
+1. Run **LoadData.py**: This script extracts the filepaths of speech signals and their corresponding emotions to a CSV file named Emotions.csv. The script also visualizes the distribution of emotions in the dataset.
+2. Run **FeatureExtraction.py**: This script is responsible for extracting features from the speech samples and performing data augmentation. It splits the dataset into training, validation, and testing sets, and saves the extracted sets into CSV files: **TrainData.csv**, **TestData.csv**, and **ValData.csv**.
+3. Run **model.py**: This script creates the Convolutional Neural Network (CNN) model that will be used for speech emotion classification.
+4. Run **train.py**: This script trains the CNN model using the extracted features from the previous step. After training, it saves the trained model and displays the results for testing.
+
+Script **results.py** tests the trained model on the test set and displays the results, including performance metrics and visualizations. 
+By following these steps, you can successfully train and test a CNN model for speech emotion recognition using the provided dataset.
