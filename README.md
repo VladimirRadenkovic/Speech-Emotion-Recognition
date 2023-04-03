@@ -103,8 +103,8 @@ Our model achieved an accuracy of 59.06% on the test data.
            6       0.71      0.87      0.78       119
 
     accuracy                           0.59      2433
-   macro avg       0.61      0.62      0.61      2433
-   weighted avg       0.60      0.59      0.59      2433
+    macro avg       0.61      0.62      0.61      2433
+    weighted avg       0.60      0.59      0.59      2433
 
 
 ## Dependencies
