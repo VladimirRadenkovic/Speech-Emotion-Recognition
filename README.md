@@ -15,6 +15,7 @@ Datasets used in this project are:
 * Ryerson Audio-Visual Database of Emotional Speech and Song (Ravdess)
 * Surrey Audio-Visual Expressed Emotion (Savee)
 * Toronto emotional speech set (Tess)
+
 For this project I used following libraries: librosa, keras, sklearn, matplotlib, seaborn, numpy, pandas, pickle, itertools
 
 
