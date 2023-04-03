@@ -2,7 +2,7 @@
 This repository contains the implementation of a Convolutional Neural Network (CNN) for Speech Emotion Recognition (SER) using various datasets. SER aims to identify human emotions from speech signals, which can have applications in fields such as Human-Computer Interaction, Voice Assistant Systems, and Mental Health Assessment.
 ## Table of contents
 * [Project Description](#project-description)
-* [Feature Extraction and Data Augmentation](#feature-extraction-and-data-augmentation)
+* [Feature Extraction and Data Augmentation](#feature-extraction)
 * [Data Augmentation](#data-augmentation)
 * [Model Architecture](#model-architecture)
 * [Hyperparameter Tuning](#hyperparameter-tuning)
@@ -12,12 +12,33 @@ This repository contains the implementation of a Convolutional Neural Network (C
 The aim of this project is to build Convolutional Neural Network for speech emotion classification.
 Speech Emotion Recognition, abbreviated as SER, is the act of attempting to recognize human emotion and affective states from speech. This is capitalizing on the fact that voice often reflects underlying emotion through tone and pitch. This is also the phenomenon that animals like dogs and horses employ to be able to understand human emotion. 
 Datasets used in this project are:
-* Crowd-sourced Emotional Mutimodal Actors Dataset (Crema-D)
-* Ryerson Audio-Visual Database of Emotional Speech and Song (Ravdess)
-* Surrey Audio-Visual Expressed Emotion (Savee)
-* Toronto emotional speech set (Tess)
+* **Crowd-sourced Emotional Mutimodal Actors Dataset (Crema-D)**
+* **Ryerson Audio-Visual Database of Emotional Speech and Song (Ravdess)**
+* **Surrey Audio-Visual Expressed Emotion (Savee)**
+* **Toronto emotional speech set (Tess)**
 
-##Feature Extraction and Data Augmentation
+## Feature Extraction
+The following features are extracted from the audio data:
+* **Zero Crossing Rate**: The rate of sign-changes of the signal during the duration of a particular frame.
+* **Root Mean Square Energy (RMSE)**: quantifies the energy of an audio signal by calculating the square root of the average of the squared amplitude values over a given frame. 
+* **Mel Frequency Cepstral Coefficients (MFCC)** form a cepstral representation where the frequency bands are not linear but distributed according to the mel-scale. 
+
+These features are extracted using the **librosa** library, which provides a rich set of functions for audio signal processing. 
+The audio data is downsampled to a lower sample rate of 8025. Downsampling reduces the computational complexity and can improve the performance of the model, especially when working with large datasets.
+
+## Data Augmentation
+Data augmentation techniques help increase the size of the dataset and improve the model's performance by adding variations to the input data. The following data augmentation techniques are applied:
+* Adding noise: Random Gaussian noise is added to the input audio data.
+* Shifting: The audio data is shifted along the time axis.
+* Pitching: The pitch of the audio data is modified using the librosa.effects.pitch_shift function.
+* Stretching: The audio data is stretched or compressed along the time axis using the librosa.effects.time_stretch function.
+
+After applying data augmentation, the features are extracted from the augmented data, and the final feature matrix is created by stacking the features obtained from the original and augmented data. This matrix is then used to train and evaluate the model.
+
+The dataset is divided into training, testing, and validation sets, and the extracted features are saved as CSV files for further processing.
+
+**Note**: In many widely-used Kaggle notebooks for this problem, the authors first apply data augmentation and extract features before splitting the data into train, validation, and test sets. This approach may lead to data leakage, as the augmented data from the training set is likely to be present in the test set, resulting in test results appearing much better than they actually are.
+
 
 
 ## Model Architecture
