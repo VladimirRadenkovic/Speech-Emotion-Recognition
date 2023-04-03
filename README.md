@@ -2,7 +2,7 @@
 This repository contains the implementation of a Convolutional Neural Network (CNN) for Speech Emotion Recognition (SER) using various datasets. SER aims to identify human emotions from speech signals, which can have applications in fields such as Human-Computer Interaction, Voice Assistant Systems, and Mental Health Assessment.
 ## Table of contents
 * [Project Description](#project-description)
-* [Feature Extraction and Data Augmentation](#feature-extraction)
+* [Feature Extraction and Data Augmentation](#feature-extraction-and-data-augmentation)
 * [Data Augmentation](#data-augmentation)
 * [Model Architecture](#model-architecture)
 * [Hyperparameter Tuning](#hyperparameter-tuning)
