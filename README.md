@@ -8,17 +8,28 @@ This repository contains the implementation of a Convolutional Neural Network (C
 * [Model Architecture](#model-architecture)
 * [Hyperparameter Tuning](#hyperparameter-tuning)
 * [Results](#results)
+* [Dependencies](#dependencies)
 
 ## Project Description
 The aim of this project is to build Convolutional Neural Network for speech emotion classification.
-Speech Emotion Recognition, abbreviated as SER, is the act of attempting to recognize human emotion and affective states from speech. This is capitalizing on the fact that voice often reflects underlying emotion through tone and pitch. This is also the phenomenon that animals like dogs and horses employ to be able to understand human emotion. 
+Speech Emotion Recognition (SER) is the process of identifying human emotions and affective states from speech signals. It capitalizes on the fact that vocal cues, such as tone and pitch, often reflect a speaker's underlying emotions. This phenomenon is also observed in animals, like dogs and horses, which use vocal cues to understand human emotions.
+
+In this project I leverage CNNs to create robust and accurate model for SER. CNNs have shown remarkable success in various pattern recognition tasks, including image and audio analysis, due to their ability to learn spatial hierarchies and capture complex features. By using a CNN, we aim to effectively capture the intricate patterns in speech signals that convey emotional information. 
+
+By accurately recognizing emotions from speech, we can enable more natural and empathetic interactions between humans and technology, ultimately enhancing user experience and fostering better communication.
 
 ## Datasets
 The following datasets have been used in this project:
-* **Crowd-sourced Emotional Mutimodal Actors Dataset (Crema-D)**
-* **Ryerson Audio-Visual Database of Emotional Speech and Song (Ravdess)**
-* **Surrey Audio-Visual Expressed Emotion (Savee)**
-* **Toronto emotional speech set (Tess)**
+* **Crowd-sourced Emotional Mutimodal Actors Dataset (Crema-D)**':
+Crema-D is a dataset that contains 7,442 audio and video clips from 91 actors, who express 12 different emotions. The actors are of various ethnic backgrounds and age groups, and the dataset has a balanced gender distribution.
+* **Ryerson Audio-Visual Database of Emotional Speech and Song (Ravdess)**:
+Ravdess consists of 7356 audio files of various emotional expressions recorded by 24 professional actors. The dataset contains speech and song samples, with each sample being labeled with an emotion and intensity level.
+* **Surrey Audio-Visual Expressed Emotion (Savee)**:
+Savee is a dataset comprising 480 British English audio-visual samples from four male actors. The actors express seven different emotions, and the recordings are labeled with the corresponding emotion.
+* **Toronto emotional speech set (Tess)**:
+Tess consists of 200 audio files per emotion, with a total of 2800 audio files. The dataset features emotional speech recordings by two actresses who express seven different emotions.
+
+By combining these datasets, the aim is to create a robust and diverse collection of emotional speech samples that can be effectively used for training and evaluating our emotion recognition model. This ensures a higher degree of accuracy and generalization across various accents, genders, and age groups.
 
 ## Feature Extraction
 The following features are extracted from the audio data:
@@ -62,3 +73,19 @@ The output layer is a fully connected (Dense) layer with 7 neurons, correspondin
 The model is compiled with the Adam optimizer, categorical cross-entropy loss, and the following performance metrics: accuracy, precision, recall, and F1-score. Custom functions recall_m, precision_m, and f1_m are defined to calculate these metrics during training.
 
 Two callback functions, EarlyStopping and ReduceLROnPlateau, are used during the training process to prevent overfitting and optimize the learning rate, respectively.
+
+## Dependencies
+The following Python packages are used in this project:
+1. Keras
+2. Tensorflow
+3. Numpy
+4. Pandas
+5. scikit-learn
+6. seaborn
+7. matplotlib
+8. librosa
+9. itertools
+10. os
+11. warnings
+12. random
+13. pickle
