@@ -34,6 +34,7 @@ Tess consists of 200 audio files per emotion, with a total of 2800 audio files. 
 By combining these datasets, the aim is to create a robust and diverse collection of emotional speech samples that can be effectively used for training and evaluating our emotion recognition model. This ensures a higher degree of accuracy and generalization across various accents, genders, and age groups.
 
 The emotions to be classified from the audio files are: disgust, happy, sad, neutral, fear, angry, and surprise.
+Extracted dataset used in this project cointains 12162 speech samples.
 
 ## Feature Extraction
 The following features are extracted from the audio data:
@@ -77,6 +78,13 @@ The output layer is a fully connected (Dense) layer with 7 neurons, correspondin
 The model is compiled with the Adam optimizer, categorical cross-entropy loss, and the following performance metrics: accuracy, precision, recall, and F1-score. Custom functions recall_m, precision_m, and f1_m are defined to calculate these metrics during training.
 
 Two callback functions, EarlyStopping and ReduceLROnPlateau, are used during the training process to prevent overfitting and optimize the learning rate, respectively.
+
+## Results
+During hyperparameter tuning, the model was trained with features extracted from both original and downsampled speech signals. The experiments demonstrated that training and testing the model with downsampled data led to significantly better results. Various model architectures were tested, and the provided architecture yielded the best results. Through experimentation, it was determined that a batch size of 64 produced the most optimal results.
+
+Our model achieved an accuracy of 59.06% on the test data.
+![confusion matrix on test data](https://user-images.githubusercontent.com/128641675/229536923-a7432bcc-45d8-4ece-99a0-598ad0236053.png)
+
 
 ## Dependencies
 The following Python packages are used in this project:
