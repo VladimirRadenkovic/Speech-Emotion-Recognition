@@ -83,9 +83,13 @@ Two callback functions, EarlyStopping and ReduceLROnPlateau, are used during the
 During hyperparameter tuning, the model was trained with features extracted from both original and downsampled speech signals. The experiments demonstrated that training and testing the model with downsampled data led to significantly better results. Various model architectures were tested, and the provided architecture yielded the best results. Through experimentation, it was determined that a batch size of 64 produced the most optimal results. The model was trained for 10 epochs. When trained for additional epopchs it did not show any improvement.
 
 Our model achieved an accuracy of 59.06% on the test data.
+
+
 ![Smaller network dropout downsampled data fitst 10 epochs](https://user-images.githubusercontent.com/128641675/229537626-616c5536-dfeb-438f-9623-83480ab24797.png)
 
+
 ![confusion matrix on test data](https://user-images.githubusercontent.com/128641675/229536923-a7432bcc-45d8-4ece-99a0-598ad0236053.png)
+
 
 
               precision    recall  f1-score   support
@@ -100,7 +104,7 @@ Our model achieved an accuracy of 59.06% on the test data.
 
     accuracy                           0.59      2433
    macro avg       0.61      0.62      0.61      2433
-weighted avg       0.60      0.59      0.59      2433
+   weighted avg       0.60      0.59      0.59      2433
 
 
 ## Dependencies
