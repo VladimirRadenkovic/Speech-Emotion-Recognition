@@ -198,9 +198,9 @@ X_val_features = scaler.transform(X_val_features)
 
 
 
-train_path = "TrainDataDownsampled.csv"
-test_path = "TestDataDownsampled.csv"
-val_path = "ValDataDownsampled.csv"
+train_path = "TrainData.csv"
+test_path = "TestData.csv"
+val_path = "ValData.csv"
 
 train_df = pd.DataFrame(X_train_features)
 train_df["labels"] = y_train_features
